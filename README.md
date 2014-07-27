@@ -7,6 +7,7 @@ A syncing approach to backing up Quora answers, questions, votes, and follows. R
 * [Installation](#installation)
 * [Usage](#usage)
     * [Backup Formats](#backup-formats)
+    * [Specifying an Activity](#specifiying-an-activity)
 
 ## Installation
 You will need [Python 2](https://www.python.org/download/). [pip](http://pip.readthedocs.org/en/latest/installing.html) is recommended for installing dependencies.
@@ -25,9 +26,13 @@ To access the help for the options and arguments:
     Usage: backup.py [OPTIONS] USER
 
     Options:
-      -p, --path TEXT          specify a path to store the backup files at
+      -p, --path TEXT                 Specify a path at which to store the
+                                      backup files.
+      -t, --type [answers|questions|upvotes|question_follows]
+                                      Specify only one type of activity to be
+                                      backed up.
       -f, --format [json|csv]
-      --help                   Show this message and exit.
+      --help                          Show this message and exit.
 
 ### Backup Formats
 To specify a format for your backup:
@@ -53,3 +58,8 @@ Your content will be stored in the following files, in whatever directory you ru
     question_follows.csv
 
 The resulting CSV output will have columns (fields/attributes) delimited by commas and rows (entries) delimited by new lines. The first row will be a header row, containing the names of the fields.
+
+### Specifying an Activity
+You can also specify only one activity to be backed up. For instance, to only back up answers:
+
+    $  python backup.py --type answers Christopher-J-Su
