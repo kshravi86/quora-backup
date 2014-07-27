@@ -25,15 +25,43 @@ def json_backup(new, filepath):
         with open(filepath, 'w') as outfile:
           json.dump(new, outfile)
 
+def csv_sync_items(writer, old_ids, new, fieldnames):
+    # need to come up with a faster way to do this
+    # db implementations will be much faster
+    for item in new:
+        if item['id'] not in old_ids:
+            row = []
+            for field in fieldnames:
+                if field in item.keys():
+                    row.append(item[field].encode('utf8'))
+                else:
+                    row.append(None)
+            writer.writerow(row)
+
 def csv_backup(new, filepath):
     import csv
+    fieldnames = ['id', 'published', 'link', 'title', 'summary']
     if os.path.isfile(filepath):
-        csv_data = csv.reader(open(filepath))
         old_ids = []
-        for row in csv_data:
-            old_ids.append[0]
+        with open(filepath, 'r') as file:
+            csv_data = csv.reader(file)
+            for row in csv_data:
+                old_ids.append(row[0])
+        with open(filepath, 'wb') as fp:
+            writer = csv.writer(fp, delimiter=',')
+            csv_sync_items(writer, old_ids, new, fieldnames)
     else:
-        print 'bye'
+        with open(filepath, 'wb') as fp:
+            writer = csv.writer(fp, delimiter=',')
+            writer.writerow(fieldnames)
+            for item in new:
+                row = []
+                for field in fieldnames:
+                    if field in item.keys():
+                        row.append(item[field].encode('utf8'))
+                    else:
+                        row.append(None)
+                writer.writerow(row)
 
 
 @click.command()
