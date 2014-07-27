@@ -14,7 +14,7 @@ def sync_items(old, new):
             old.append(item)
     return old
 
-def backup(new, filepath):
+def json_backup(new, filepath):
     if os.path.isfile(filepath):
         with open(filepath) as outfile:
             old = json.load(outfile)
@@ -26,18 +26,22 @@ def backup(new, filepath):
           json.dump(new, outfile)
 
 @click.command()
-@click.option('--path', '-p', help='specify a path to store the JSON files at')
+@click.option('--path', '-p', help='specify a path to store the backup files at')
+@click.option('--format', '-f', default='json', type=click.Choice(['json', 'csv']))
 @click.argument('user')
-def sync(user, path):
+def sync(user, path, format):
     if path is None:
         path = os.getcwd()
     quora = Quora()
     activity = quora.get_activity(user)
-    backup(activity.answers, os.path.join(path, 'answers.json'))
-    backup(activity.questions, os.path.join(path, 'questions.json'))
-    backup(activity.upvotes, os.path.join(path, 'upvotes.json'))
-    backup(activity.question_follows, os.path.join(path, 'question_follows.json'))
-    # backup(activity.user_follows, os.path.join(path, 'user_follows.json'))
+    if format == 'json':
+        json_backup(activity.answers, os.path.join(path, 'answers.json'))
+        json_backup(activity.questions, os.path.join(path, 'questions.json'))
+        json_backup(activity.upvotes, os.path.join(path, 'upvotes.json'))
+        json_backup(activity.question_follows, os.path.join(path, 'question_follows.json'))
+        # backup(activity.user_follows, os.path.join(path, 'user_follows.json'))
+    else:
+        print 'Backup format has not yet been implemented.'
 
 if __name__ == '__main__':
     sync()
