@@ -2,7 +2,7 @@ from quora import Quora, Activity
 import click
 import os
 
-def json_sync_items(old_ids, new):
+def json_sync_items(old, new):
     # need to come up with a faster way to do this
     # db implementations will be much faster
     ids = []
@@ -18,7 +18,7 @@ def json_backup(new, filepath):
     if os.path.isfile(filepath):
         with open(filepath) as outfile:
             old = json.load(outfile)
-        old = sync_items(old, new)
+        old = json_sync_items(old, new)
         with open(filepath, 'w') as outfile:
             json.dump(old, outfile)
     else:
@@ -50,7 +50,13 @@ def sync(user, path, format):
         json_backup(activity.questions, os.path.join(path, 'questions.json'))
         json_backup(activity.upvotes, os.path.join(path, 'upvotes.json'))
         json_backup(activity.question_follows, os.path.join(path, 'question_follows.json'))
-        # backup(activity.user_follows, os.path.join(path, 'user_follows.json'))
+        # json_backup(activity.user_follows, os.path.join(path, 'user_follows.json'))
+    elif format == 'csv':
+        csv_backup(activity.answers, os.path.join(path, 'answers.csv'))
+        csv_backup(activity.questions, os.path.join(path, 'questions.csv'))
+        csv_backup(activity.upvotes, os.path.join(path, 'upvotes.csv'))
+        csv_backup(activity.question_follows, os.path.join(path, 'question_follows.csv'))
+        # csv_backup(activity.user_follows, os.path.join(path, 'user_follows.csv'))
     else:
         print 'Backup format has not yet been implemented.'
 
