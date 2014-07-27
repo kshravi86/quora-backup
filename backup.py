@@ -26,7 +26,7 @@ def json_backup(new, filepath):
           json.dump(new, outfile)
 
 @click.command()
-@click.option('--path', '-p', help='specify a path to store the backup files at')
+@click.option('--path', '-p', help='Specify a path at which to store the backup files.')
 @click.option('--format', '-f', default='json', type=click.Choice(['json', 'csv']))
 @click.argument('user')
 def sync(user, path, format):
