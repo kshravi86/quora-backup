@@ -16,6 +16,13 @@ You will need [Python 2](https://www.python.org/download/). [pip](http://pip.rea
     $ cd quora-backup
     $ pip install -r requirements.txt
 
+### Installing without git
+For the less technical users who want to use quora-backup without installing git:
+
+1. [Download quora-backup](https://github.com/csu/quora-backup/archive/master.zip) and extract the files from the `.zip` archive
+2. Open a terminal or command prompt window and enter the folder using `cd`
+3. Run `pip install -r requirements.txt` (after installing Python and pip)
+
 ## Usage
 
     $ python backup.py Christopher-J-Su  # defaults to flat-file json backups
