@@ -47,7 +47,7 @@ def csv_backup(new, filepath):
             csv_data = csv.reader(file)
             for row in csv_data:
                 old_ids.append(row[0])
-        with open(filepath, 'wb') as fp:
+        with open(filepath, 'a') as fp:
             writer = csv.writer(fp, delimiter=',')
             csv_sync_items(writer, old_ids, new, fieldnames)
     else:
