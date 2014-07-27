@@ -31,8 +31,9 @@ To access the help for the options and arguments:
       -t, --type [answers|questions|upvotes|question_follows]
                                       Specify only one type of activity to be
                                       backed up.
-      -f, --format [json|csv]
-      --help                          Show this message and exit.
+      -f, --format [json|csv]         Specify a format for the backup. Defaults
+                                      to JSON.
+      --help                          Show this message and exit.                 Show this message and exit.
 
 ### Backup Formats
 To specify a format for your backup:
