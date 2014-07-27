@@ -1,9 +1,8 @@
 from quora import Quora, Activity
 import click
 import os
-import json
 
-def sync_items(old, new):
+def json_sync_items(old_ids, new):
     # need to come up with a faster way to do this
     # db implementations will be much faster
     ids = []
@@ -15,6 +14,7 @@ def sync_items(old, new):
     return old
 
 def json_backup(new, filepath):
+    import json
     if os.path.isfile(filepath):
         with open(filepath) as outfile:
             old = json.load(outfile)
@@ -24,6 +24,17 @@ def json_backup(new, filepath):
     else:
         with open(filepath, 'w') as outfile:
           json.dump(new, outfile)
+
+def csv_backup(new, filepath):
+    import csv
+    if os.path.isfile(filepath):
+        csv_data = csv.reader(open(filepath))
+        old_ids = []
+        for row in csv_data:
+            old_ids.append[0]
+    else:
+        print 'bye'
+
 
 @click.command()
 @click.option('--path', '-p', help='Specify a path at which to store the backup files.')

@@ -9,6 +9,7 @@ A syncing approach to backing up Quora answers, questions, votes, and follows. R
     * [Backup Formats](#backup-formats)
 
 ## Installation
+You will need [Python 2](https://www.python.org/download/). [pip](http://pip.readthedocs.org/en/latest/installing.html) is recommended for installing dependencies.
 
     $ git clone https://github.com/csu/quora-backup.git
     $ cd quora-backup
