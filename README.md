@@ -7,7 +7,7 @@ A syncing approach to backing up Quora answers, questions, votes, and follows. R
 * [Installation](#installation)
 * [Usage](#usage)
     * [Backup Formats](#backup-formats)
-    * [Specifying an Activity](#specifiying-an-activity)
+    * [Specifying an Activity](#specifying-an-activity)
 
 ## Installation
 You will need [Python 2](https://www.python.org/download/). [pip](http://pip.readthedocs.org/en/latest/installing.html) is recommended for installing dependencies.
