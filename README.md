@@ -1,8 +1,6 @@
 quora-backup
 ============
 
-### Note: quora-backup is currently broken because of the recent Quora UI change! Fix coming soon. - August 2, 2014
-
 A syncing approach to backing up Quora answers, questions, votes, and follows. Rather than fetching your entire history of Quora activity all at once, quora-backup checks your recent Quora activity and saves only the new entries. **Run it regularly to maintain a full backup.** This not only allows backups to be performed faster and more frequently, but also makes less requests to Quora's servers and doesn't face request rate-limiting issues like some older backup techniques do. It supports backing up to **JSON and CSV**. More file formats and databases to come.
 
 ### Table of Contents
