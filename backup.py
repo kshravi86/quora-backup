@@ -9,7 +9,6 @@ from quorabackup import QuoraBackup
 def sync(user, path, type, format):
     q = QuoraBackup(user)
     q.backup(path, format, type)
-    
 
 if __name__ == '__main__':
     sync()
