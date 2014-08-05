@@ -62,10 +62,18 @@ def csv_backup(new, filepath):
                         row.append(None)
                 writer.writerow(row)
 
+def mongodb_backup(current, collection, user, type):
+    for item in current:
+        if collection.find({'backup_id': item['id']}).limit(1).count() < 1:
+            item['backup_id'] = item.pop('id')
+            item['backup_type'] = type
+            collection.insert(item)
+
 class QuoraBackup():
     def __init__(self, user):
         quora = Quora()
         self.activity = quora.get_activity(user)
+        self.user = user
 
     def backup(self, path, format, type):
         if path is None:
@@ -103,5 +111,27 @@ class QuoraBackup():
                 csv_backup(self.activity.upvotes, os.path.join(path, 'upvotes.csv'))
                 csv_backup(self.activity.question_follows, os.path.join(path, 'question_follows.csv'))
                 # csv_backup(self.activity.user_follows, os.path.join(path, 'user_follows.csv'))
+        elif format == 'mongodb':
+            # currently still in testing! so URI is hardcoded in. later will be an argument.
+            from pymongo import MongoClient
+            client = MongoClient('mongodb://localhost:27017/')
+            db = client.quora_backup
+            collection = db.activity
+            if type == 'answers':
+                mongodb_backup(self.activity.answers, collection, self.user, 'answer')
+            elif type == 'questions':
+                mongodb_backup(self.activity.questions, collection, self.user, 'question')
+            elif type == 'upvotes':
+                mongodb_backup(self.activity.upvotes, collection, self.user, 'upvote')
+            elif type == 'question_follows':
+                mongodb_backup(self.activity.question_follows, collection, self.user, 'question_follow')
+            # elif type == 'user_follows':
+            #     mongodb_backup(self.activity.user_follows, collection, self.user, 'user_follow')
+            else:
+                mongodb_backup(self.activity.answers, collection, self.user, 'answer')
+                mongodb_backup(self.activity.questions, collection, self.user, 'question')
+                mongodb_backup(self.activity.upvotes, collection, self.user, 'upvote')
+                mongodb_backup(self.activity.question_follows, collection, self.user, 'question_follow')
+                # mongodb_backup(self.activity.user_follows, collection, self.user, 'user_follow')
         else:
             print 'Backup format has not yet been implemented.'
