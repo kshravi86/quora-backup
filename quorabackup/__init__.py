@@ -1,1 +1,1 @@
-from quora_backup import json_backup, csv_backup
+from quora_backup import QuoraBackup
