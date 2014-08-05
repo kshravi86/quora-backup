@@ -75,7 +75,7 @@ class QuoraBackup():
         self.activity = quora.get_activity(user)
         self.user = user
 
-    def backup(self, path, format, type):
+    def backup(self, path, format, type, mongodb_uri=None):
         if path is None:
             path = os.getcwd()
         if format == 'json':
@@ -112,9 +112,11 @@ class QuoraBackup():
                 csv_backup(self.activity.question_follows, os.path.join(path, 'question_follows.csv'))
                 # csv_backup(self.activity.user_follows, os.path.join(path, 'user_follows.csv'))
         elif format == 'mongodb':
-            # currently still in testing! so URI is hardcoded in. later will be an argument.
             from pymongo import MongoClient
-            client = MongoClient('mongodb://localhost:27017/')
+            if mongodb_uri is not None:
+                client = MongoClient(mongodb_uri)
+            else:
+                client = MongoClient('mongodb://localhost:27017/')
             db = client.quora_backup
             collection = db.activity
             if type == 'answers':
