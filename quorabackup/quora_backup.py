@@ -67,6 +67,7 @@ def mongodb_backup(current, collection, user, type):
         if collection.find({'backup_id': item['id']}).limit(1).count() < 1:
             item['backup_id'] = item.pop('id')
             item['backup_type'] = type
+            item['backup_user'] = user
             collection.insert(item)
 
 class QuoraBackup():
