@@ -118,7 +118,7 @@ class QuoraBackup():
                 client = MongoClient(mongodb_uri)
             else:
                 client = MongoClient('mongodb://localhost:27017/')
-            db = client.quora_backup
+            db = client.get_default_database()
             collection = db.activity
             if type == 'answers':
                 mongodb_backup(self.activity.answers, collection, self.user, 'answer')
