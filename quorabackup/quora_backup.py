@@ -76,7 +76,7 @@ class QuoraBackup():
         self.activity = quora.get_activity(user)
         self.user = user
 
-    def backup(self, path, format, type, mongodb_uri=None):
+    def backup(self, format, mongodb_uri=None, path=None, type=None):
         if path is None:
             path = os.getcwd()
         if format == 'json':

@@ -9,7 +9,7 @@ from quorabackup import QuoraBackup
 @click.argument('user')
 def sync(user, path, type, format, mongodburi):
     q = QuoraBackup(user)
-    q.backup(path, format, type, mongodb_uri=mongodburi)
+    q.backup(format, mongodb_uri=mongodburi, path=path, type=type)
 
 if __name__ == '__main__':
     sync()
