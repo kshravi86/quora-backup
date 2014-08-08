@@ -1,4 +1,5 @@
 import os
+import logging
 from quora import Quora, Activity
 
 def json_sync_items(old, new):
@@ -64,11 +65,15 @@ def csv_backup(new, filepath):
 
 def mongodb_backup(current, collection, user, type):
     for item in current:
-        if collection.find({'backup_id': item['id']}).limit(1).count() < 1:
-            item['backup_id'] = item.pop('id')
-            item['backup_type'] = type
-            item['backup_user'] = user
-            collection.insert(item)
+        if 'id' in item.keys():
+            if collection.find({'backup_id': item['id']}).limit(1).count() < 1:
+                item['backup_id'] = item.pop('id')
+                item['backup_type'] = type
+                item['backup_user'] = user
+                collection.insert(item)
+        else:
+            logging.debug('Item without id:')
+            logging.debug(item)
 
 class QuoraBackup():
     def __init__(self, user):
