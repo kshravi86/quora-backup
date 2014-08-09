@@ -54,10 +54,10 @@
 
 <p>You will need <a href="https://www.python.org/download/">Python 2</a>. <a href="http://pip.readthedocs.org/en/latest/installing.html">pip</a> is recommended for installing dependencies.</p>
 
-<pre><code>$ git clone https://github.com/csu/quora-backup.git
-$ cd quora-backup
-$ pip install -r requirements.txt
-</code></pre>
+<div class="highlight highlight-bash"><pre><span class="nv">$ </span>git clone https://github.com/csu/quora-backup.git
+<span class="nv">$ </span><span class="nb">cd </span>quora-backup
+<span class="nv">$ </span>pip install -r requirements.txt
+</pre></div>
 
 <h3>
 <a name="installing-without-git" class="anchor" href="#installing-without-git"><span class="octicon octicon-link"></span></a>Installing without git</h3>
@@ -65,40 +65,38 @@ $ pip install -r requirements.txt
 <p>For the less technical users who want to use quora-backup without installing git:</p>
 
 <ol>
-<li>
-<a href="https://github.com/csu/quora-backup/archive/master.zip">Download quora-backup</a> and extract the files from the <code>.zip</code> archive</li>
-<li>Open a terminal or command prompt window and enter the folder using <code>cd</code>
-</li>
-<li>Run <code>pip install -r requirements.txt</code> (after installing Python and pip)</li>
+<li><p><a href="https://github.com/csu/quora-backup/archive/master.zip">Download quora-backup</a> and extract the files from the <code>.zip</code> archive</p></li>
+<li><p>Open a terminal or command prompt window and enter the folder using <code>cd</code></p></li>
+<li><p>Run <code>pip install -r requirements.txt</code> (after installing Python and pip)</p></li>
 </ol><h2>
 <a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
 
-<pre><code>$ python backup.py Christopher-J-Su  # defaults to flat-file json backups
-</code></pre>
+<div class="highlight highlight-bash"><pre><span class="nv">$ </span>python backup.py Christopher-J-Su  <span class="c"># defaults to flat-file json backups</span>
+</pre></div>
 
 <p>To access the help for the options and arguments:</p>
 
-<pre><code>$ python backup.py --help
-Usage: backup.py [OPTIONS] USER
+<div class="highlight highlight-bash"><pre><span class="nv">$ </span>python backup.py --help
+Usage: backup.py <span class="o">[</span>OPTIONS<span class="o">]</span> USER
 
 Options:
   -p, --path TEXT                 Specify a path at which to store the
                                   backup files.
-  -t, --type [answers|questions|upvotes|question_follows]
-                                  Specify only one type of activity to be
+  -t, --type <span class="o">[</span>answers<span class="p">|</span>questions<span class="p">|</span>upvotes<span class="p">|</span>question_follows<span class="o">]</span>
+                                  Specify only one <span class="nb">type </span>of activity to be
                                   backed up.
-  -f, --format [json|csv]         Specify a format for the backup. Defaults
+  -f, --format <span class="o">[</span>json<span class="p">|</span>csv<span class="o">]</span>         Specify a format <span class="k">for</span> the backup. Defaults
                                   to JSON.
   --help                          Show this message and exit.                 Show this message and exit.
-</code></pre>
+</pre></div>
 
 <h3>
 <a name="backup-formats" class="anchor" href="#backup-formats"><span class="octicon octicon-link"></span></a>Backup Formats</h3>
 
 <p>To specify a format for your backup:</p>
 
-<pre><code>$ python backup.py --format csv Christopher-J-Su
-</code></pre>
+<div class="highlight highlight-bash"><pre><span class="nv">$ </span>python backup.py --format csv Christopher-J-Su
+</pre></div>
 
 <p>For a list of available backup formats, read the help (see <a href="#usage">Usage</a> section).</p>
 
@@ -131,8 +129,8 @@ question_follows.csv
 
 <p>You can also specify only one activity to be backed up. For instance, to only back up answers:</p>
 
-<pre><code>$  python backup.py --type answers Christopher-J-Su
-</code></pre>
+<div class="highlight highlight-bash"><pre><span class="nv">$ </span> python backup.py --type answers Christopher-J-Su
+</pre></div>
       </section>
     </div>
 
