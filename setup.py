@@ -2,7 +2,7 @@ from distutils.core import setup
 
 setup(
     name='quorabackup',
-    version='0.1.4',
+    version='0.1.5',
     author='Christopher J. Su',
     author_email='christophersu9@gmail.com',
     packages=['quorabackup'],
@@ -15,7 +15,7 @@ setup(
         "click == 2.4",
         "feedparser == 5.1.3",
         "pymongo == 2.7.2",
-        "quora == 0.1.1",
+        "quora == 0.1.4",
         "requests == 2.3.0",
         "wsgiref == 0.1.2"
     ],
