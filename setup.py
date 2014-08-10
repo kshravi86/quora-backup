@@ -2,7 +2,7 @@ from distutils.core import setup
 
 setup(
     name='quorabackup',
-    version='0.1.3',
+    version='0.1.4',
     author='Christopher J. Su',
     author_email='christophersu9@gmail.com',
     packages=['quorabackup'],

@@ -93,6 +93,8 @@ class QuoraBackup():
                 json_backup(self.activity.upvotes, os.path.join(path, 'upvotes.json'))
             elif type == 'question_follows':
                 json_backup(self.activity.question_follows, os.path.join(path, 'question_follows.json'))
+            elif type == 'review_requests':
+                json_backup(self.activity.review_requests, os.path.join(path, 'review_requests.json'))
             # elif type == 'user_follows':
             #     json_backup(self.activity.user_follows, os.path.join(path, 'user_follows.json'))
             else:
@@ -100,6 +102,8 @@ class QuoraBackup():
                 json_backup(self.activity.questions, os.path.join(path, 'questions.json'))
                 json_backup(self.activity.upvotes, os.path.join(path, 'upvotes.json'))
                 json_backup(self.activity.question_follows, os.path.join(path, 'question_follows.json'))
+                json_backup(self.activity.review_requests, os.path.join(path, 'review_requests.json'))
+                # json_backup(self.activity.user_follows, os.path.join(path, 'user_follows.json'))
         elif format == 'csv':
             if type == 'answers':
                 csv_backup(self.activity.answers, os.path.join(path, 'answers.csv'))
@@ -109,6 +113,8 @@ class QuoraBackup():
                 csv_backup(self.activity.upvotes, os.path.join(path, 'upvotes.csv'))
             elif type == 'question_follows':
                 csv_backup(self.activity.question_follows, os.path.join(path, 'question_follows.csv'))
+            elif type == 'review_requests':
+                csv_backup(self.activity.review_requests, os.path.join(path, 'review_requests.csv'))
             # elif type == 'user_follows':
             #     csv_backup(self.activity.user_follows, os.path.join(path, 'user_follows.csv'))
             else:
@@ -116,6 +122,7 @@ class QuoraBackup():
                 csv_backup(self.activity.questions, os.path.join(path, 'questions.csv'))
                 csv_backup(self.activity.upvotes, os.path.join(path, 'upvotes.csv'))
                 csv_backup(self.activity.question_follows, os.path.join(path, 'question_follows.csv'))
+                csv_backup(self.activity.review_requests, os.path.join(path, 'review_requests.csv'))
                 # csv_backup(self.activity.user_follows, os.path.join(path, 'user_follows.csv'))
         elif format == 'mongodb':
             from pymongo import MongoClient
@@ -133,6 +140,8 @@ class QuoraBackup():
                 mongodb_backup(self.activity.upvotes, collection, self.user, 'upvote')
             elif type == 'question_follows':
                 mongodb_backup(self.activity.question_follows, collection, self.user, 'question_follow')
+            elif type == 'review_requests':
+                mongodb_backup(self.activity.review_requests, collection, self.user, 'review_requests')
             # elif type == 'user_follows':
             #     mongodb_backup(self.activity.user_follows, collection, self.user, 'user_follow')
             else:
@@ -140,6 +149,7 @@ class QuoraBackup():
                 mongodb_backup(self.activity.questions, collection, self.user, 'question')
                 mongodb_backup(self.activity.upvotes, collection, self.user, 'upvote')
                 mongodb_backup(self.activity.question_follows, collection, self.user, 'question_follow')
+                mongodb_backup(self.activity.review_requests, collection, self.user, 'review_requests')
                 # mongodb_backup(self.activity.user_follows, collection, self.user, 'user_follow')
         else:
             print 'Backup format has not yet been implemented.'
