@@ -141,7 +141,7 @@ class QuoraBackup():
             elif type == 'question_follows':
                 mongodb_backup(self.activity.question_follows, collection, self.user, 'question_follow')
             elif type == 'review_requests':
-                mongodb_backup(self.activity.review_requests, collection, self.user, 'review_requests')
+                mongodb_backup(self.activity.review_requests, collection, self.user, 'review_request')
             # elif type == 'user_follows':
             #     mongodb_backup(self.activity.user_follows, collection, self.user, 'user_follow')
             else:
@@ -149,7 +149,7 @@ class QuoraBackup():
                 mongodb_backup(self.activity.questions, collection, self.user, 'question')
                 mongodb_backup(self.activity.upvotes, collection, self.user, 'upvote')
                 mongodb_backup(self.activity.question_follows, collection, self.user, 'question_follow')
-                mongodb_backup(self.activity.review_requests, collection, self.user, 'review_requests')
+                mongodb_backup(self.activity.review_requests, collection, self.user, 'review_request')
                 # mongodb_backup(self.activity.user_follows, collection, self.user, 'user_follow')
         else:
             print 'Backup format has not yet been implemented.'
