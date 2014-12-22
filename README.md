@@ -65,7 +65,8 @@ Your content will be stored in the following files, in whatever directory you ru
     answers.json
     questions.json
     upvotes.json
-    question_follows.json
+    user_follows.json
+    review_requests.json
 
 #### CSV Backup Details
 Your content will be stored in the following files, in whatever directory you run the above command in:
@@ -73,7 +74,8 @@ Your content will be stored in the following files, in whatever directory you ru
     answers.csv
     questions.csv
     upvotes.csv
-    question_follows.csv
+    user_follows.csv
+    review_requests.csv
 
 The resulting CSV output will have columns (fields/attributes) delimited by commas and rows (entries) delimited by new lines. The first row will be a header row, containing the names of the fields.
 
