@@ -34,18 +34,20 @@ $ python backup.py Christopher-J-Su  # defaults to flat-file json backups
 To access the help for the options and arguments:
 
 ```bash
-$ python backup.py --help
 Usage: backup.py [OPTIONS] USER
 
 Options:
-  -p, --path TEXT                 Specify a path at which to store the
-                                  backup files.
-  -t, --type [answers|questions|upvotes|question_follows]
+  -p, --path TEXT                 Specify a path at which to store the backup
+                                  files.
+  -t, --type [answers|questions|upvotes|user_follows]
                                   Specify only one type of activity to be
                                   backed up.
-  -f, --format [json|csv]         Specify a format for the backup. Defaults
-                                  to JSON.
-  --help                          Show this message and exit.                 Show this message and exit.
+  -f, --format [json|csv|mongodb]
+                                  Specify a format for the backup. Defaults to
+                                  JSON.
+  -m, --mongodburi TEXT           Specify a MongoDB URI. If not specified,
+                                  tries localhost.
+  --help                          Show this message and exit.
 ```
 
 ### Backup Formats
