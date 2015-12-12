@@ -1,4 +1,4 @@
-# quora-backup
+# Quora Backup
 
 #### Note: parts of this script may be broken due to changes on Quora's end. Please open issues and make pull requests regarding this at [csu/pyquora](http://github.com/csu/pyquora).
 
