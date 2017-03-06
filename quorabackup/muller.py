@@ -7,7 +7,7 @@ chromedriver = "/home/aakash/Downloads/chromedriver"
 os.environ["webdriver.chrome.driver"] = chromedriver
 driver = webdriver.PhantomJS()
 driver3= webdriver.PhantomJS()
-driver.get("https://www.quora.com/profile/Deepak-Mehta-2")
+driver.get("https://www.quora.com/profile/Richard-Muller-3")
 #more_link
 #driver.execute_script("arguments[0].click();", each)
 while True:
@@ -22,7 +22,7 @@ while True:
            w.append(str(each.get_attribute('href')))
            driver3.get(str(each.get_attribute('href')))
 
-           if float(driver3.find_element_by_class_name('meta_num').text[:len(driver3.find_element_by_class_name('meta_num').text)-1]) > 100.0:
+           if float(driver3.find_element_by_class_name('meta_num').text[:len(driver3.find_element_by_class_name('meta_num').text)-1]) > 72.0:
                print str(each.get_attribute('href'))
                print driver3.find_element_by_class_name('meta_num').text[:len(driver3.find_element_by_class_name('meta_num').text)-1]
 
