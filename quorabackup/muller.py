@@ -22,7 +22,7 @@ while True:
            w.append(str(each.get_attribute('href')))
            driver3.get(str(each.get_attribute('href')))
 
-           if float(driver3.find_element_by_class_name('meta_num').text[:len(driver3.find_element_by_class_name('meta_num').text)-1]) > 72.0:
+           if float(driver3.find_element_by_class_name('meta_num').text[:len(driver3.find_element_by_class_name('meta_num').text)-1]) > 1.0:
                print str(each.get_attribute('href'))
                print driver3.find_element_by_class_name('meta_num').text[:len(driver3.find_element_by_class_name('meta_num').text)-1]
 
