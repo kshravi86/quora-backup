@@ -18,16 +18,16 @@ while True:
 
       if len(str(each.get_attribute('href'))) > 6:
          #print str(each.get_attribute('href'))
-         if str(each.get_attribute('href')) not in w:
-           w.append(str(each.get_attribute('href')))
+       #if str(each.get_attribute('href')) not in w:
+           #w.append(str(each.get_attribute('href')))
            driver3.get(str(each.get_attribute('href')))
+           print str(each.get_attribute('href'))
+           print driver3.find_element_by_class_name('meta_num').text[:len(driver3.find_element_by_class_name('meta_num').text)-1]
 
-           if float(driver3.find_element_by_class_name('meta_num').text[:len(driver3.find_element_by_class_name('meta_num').text)-1]) > 10.0:
-               with open('subbu.txt', 'w') as f:
-                 f.write(str(each.get_attribute('href')))
-               print str(each.get_attribute('href'))
-               print driver3.find_element_by_class_name('meta_num').text[:len(driver3.find_element_by_class_name('meta_num').text)-1]
-
+           #if float(driver3.find_element_by_class_name('meta_num').text[:len(driver3.find_element_by_class_name('meta_num').text)-1]) > 10.0:
+               #with open('subbu.txt', 'w') as f:
+                 #f.write(str(each.get_attribute('href')))
+               
     time.sleep(3)
 
     #for each in driver.find_elements_by_class_name('pagedlist_item'):
