@@ -7,12 +7,15 @@ chromedriver = "/home/aakash/Downloads/chromedriver"
 os.environ["webdriver.chrome.driver"] = chromedriver
 driver = webdriver.PhantomJS()
 driver3= webdriver.PhantomJS()
+print 'started browser'
 driver.get("https://www.quora.com/profile/Deepak-Mehta-2")
+print 'got to url'
 #more_link
 #driver.execute_script("arguments[0].click();", each)
 while True:
     driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
     elements=driver.find_elements_by_class_name('more_link')
+    print 'size'+len(elements)
     w=[]
     for each in elements:
 
