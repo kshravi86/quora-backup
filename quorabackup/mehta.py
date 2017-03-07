@@ -14,7 +14,7 @@ print 'got to url'
 #driver.execute_script("arguments[0].click();", each)
 while True:
     driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-    elements=driver.find_elements_by_class_name('more_link')
+    elements=driver.find_elements_by_class_name('rendered_qtext')
     print 'size'+str(len(elements))
     w=[]
     for each in elements:
