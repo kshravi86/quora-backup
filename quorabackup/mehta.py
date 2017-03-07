@@ -15,7 +15,7 @@ print 'got to url'
 while True:
     driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
     elements=driver.find_elements_by_class_name('more_link')
-    print 'size'+len(elements)
+    print 'size'+str(len(elements))
     w=[]
     for each in elements:
 
