@@ -19,7 +19,7 @@ while True:
     print 'size'+str(len(elements))
     w=[]
     for each in elements:
-
+      print each.text
       if len(str(each.get_attribute('href'))) > 6:
          print str(each.get_attribute('href'))
          driver3.get(str(each.get_attribute('href')))
