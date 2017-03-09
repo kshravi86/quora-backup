@@ -4,12 +4,12 @@ import time
 from selenium import webdriver
 
 
-phantomjs_path = "C:\\Users\\A572002\\Pictures\\phantomjs-2.1.1-windows\\bin\\phantomjs.exe"
+#phantomjs_path = "C:\\Users\\A572002\\Pictures\\phantomjs-2.1.1-windows\\bin\\phantomjs.exe"
 
-driver = webdriver.PhantomJS(executable_path=phantomjs_path, service_log_path=os.path.devnull)
-driver3=webdriver.PhantomJS(executable_path=phantomjs_path, service_log_path=os.path.devnull)
-#driver = webdriver.PhantomJS()
-#driver3 = webdriver.PhantomJS()
+#driver = webdriver.PhantomJS(executable_path=phantomjs_path, service_log_path=os.path.devnull)
+#driver3=webdriver.PhantomJS(executable_path=phantomjs_path, service_log_path=os.path.devnull)
+driver = webdriver.PhantomJS()
+driver3 = webdriver.PhantomJS()
 print 'started browser'
 driver.get("https://www.quora.com/profile/Deepak-Mehta-2")
 print 'got to url'
