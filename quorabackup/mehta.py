@@ -10,13 +10,13 @@ driver3= webdriver.PhantomJS()
 print 'started browser'
 driver.get("https://www.quora.com/profile/Deepak-Mehta-2")
 print 'got to url'
-driver.save_screenshot('out.png');
+driver.save_screenshot('out3.png');
 #more_link
 #driver.execute_script("arguments[0].click();", each)
 while True:
     driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
     elements=driver.find_elements_by_class_name('rendered_qtext')
-    #print 'size'+str(len(elements))
+    print 'size'+str(len(elements))
     w=[]
     for each in elements:
 
