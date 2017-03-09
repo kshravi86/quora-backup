@@ -13,7 +13,7 @@ for each in ele:
    
    yourstring=each.text
    yourstring = yourstring.encode('ascii', 'ignore').decode('ascii')
-   ans=ans+<br>+yourstring
+   ans=ans+'<br>'+yourstring
    
 ans=ans+"</body></html>"
 f=open('subbu.txt','w')
