@@ -10,6 +10,7 @@ driver3= webdriver.PhantomJS()
 print 'started browser'
 driver.get("https://www.quora.com/profile/Deepak-Mehta-2")
 print 'got to url'
+driver.save_screenshot('out.png');
 #more_link
 #driver.execute_script("arguments[0].click();", each)
 while True:
