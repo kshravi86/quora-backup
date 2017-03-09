@@ -11,7 +11,10 @@ ele=driver.find_elements_by_class_name('qtext_para')
 for each in ele:
    print each.text
    f=open('subbu.txt','w')
-   f.write(each.text)
+   yourstring=each.text
+   yourstring = yourstring.encode('ascii', 'ignore').decode('ascii')
+   f.write(yourstring)
+   
 
 
  
