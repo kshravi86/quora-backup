@@ -16,21 +16,18 @@ driver.save_screenshot('out.png');
 while True:
     driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
     elements=driver.find_elements_by_class_name('rendered_qtext')
-    print 'size'+str(len(elements))
+    #print 'size'+str(len(elements))
     w=[]
     for each in elements:
 
       if len(str(each.get_attribute('href'))) > 6:
-         #print str(each.get_attribute('href'))
-       #if str(each.get_attribute('href')) not in w:
-           #w.append(str(each.get_attribute('href')))
-           driver3.get(str(each.get_attribute('href')))
-           print str(each.get_attribute('href'))
-           print driver3.find_element_by_class_name('meta_num').text[:len(driver3.find_element_by_class_name('meta_num').text)-1]
-
-           #if float(driver3.find_element_by_class_name('meta_num').text[:len(driver3.find_element_by_class_name('meta_num').text)-1]) > 10.0:
-               #with open('subbu.txt', 'w') as f:
-                 #f.write(str(each.get_attribute('href')))
+         print str(each.get_attribute('href'))
+         driver3.get(str(each.get_attribute('href')))
+         print str(each.get_attribute('href'))
+         print driver3.find_element_by_class_name('meta_num').text[:len(driver3.find_element_by_class_name('meta_num').text)-1]
+         if float(driver3.find_element_by_class_name('meta_num').text[:len(driver3.find_element_by_class_name('meta_num').text)-1]) > 10.0:
+            with open(str(each)+'.txt', 'w') as f:
+               f.write(str(each.get_attribute('href')))
                
     time.sleep(3)
 
