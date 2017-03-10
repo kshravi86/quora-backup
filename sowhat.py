@@ -1,0 +1,13 @@
+https://www.quora.com/Do-Indians-realize-what-they-have-done-to-Quora/answer/Deepak-Mehta-2
+128.3
+https://www.quora.com/What-is-the-best-way-to-decline-to-tell-someone-your-salary-in-India/answer/Deepak-Mehta-2
+357.1
+https://www.quora.com/What-are-some-study-hacks-every-student-should-know/answer/Deepak-Mehta-2
+172.9
+https://www.quora.com/How-will-scrapping-the-INR-500-and-INR-1000-currency-notes-affect-the-daily-lives-of-Indians/answer/Deepak-Mehta-2
+189.2
+https://www.quora.com/How-would-demonetizing-500-and-1000-rupee-notes-and-introducing-new-2000-rupee-notes-help-curb-black-money-and-corruption/answer/Deepak-Mehta-2
+123.4
+https://www.quora.com/What-would-be-some-of-the-most-distinguished-families-in-the-world/answer/Deepak-Mehta-2
+112.4
+https://www.quora.com/Why-did-Apple-remove-the-escape-key-from-the-new-Macbook/answer/Deepak-Mehta-2
