@@ -13,7 +13,7 @@ driver3 = webdriver.PhantomJS()
 print 'started browser'
 driver.get("https://www.quora.com/profile/Deepak-Mehta-2")
 print 'got to url'
-driver.save_screenshot('out3.png');
+driver.save_screenshot('out4.png');
 while True:
     driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
     elements = driver.find_elements_by_class_name('answer_permalink')
