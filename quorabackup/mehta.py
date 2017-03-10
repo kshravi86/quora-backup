@@ -22,7 +22,7 @@ while True:
          print str(each.get_attribute('href'))
          print driver3.find_element_by_class_name('meta_num').text[:len(driver3.find_element_by_class_name('meta_num').text)-1]
       
-    time.sleep(3)
+    time.sleep(100)
 
  f = open('myfile','w')
 f.write('hi there\n')

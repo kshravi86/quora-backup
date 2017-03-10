@@ -15,6 +15,7 @@ driver.get("https://www.quora.com/profile/Deepak-Mehta-2")
 print 'got to url'
 driver.save_screenshot('out4.png');
 while True:
+    time.sleep(100)
     driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
     elements = driver.find_elements_by_class_name('answer_permalink')
     print 'size' + str(len(elements))
@@ -31,7 +32,7 @@ while True:
                yourstring = yourstring.encode('ascii', 'ignore').decode('ascii')
                ans=ans+yourstring
    
-    time.sleep(3)
+    
     f=open('subbu.txt','w')
     f.write(ans)
    
