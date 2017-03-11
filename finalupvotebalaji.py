@@ -18,7 +18,7 @@ driver.get("https://www.quora.com/profile/Balaji-Viswanathan-2")
 print 'got to url'
 driver.save_screenshot('out4.png');
 while True:
-    #time.sleep(60)
+    time.sleep(60)
     driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
     elements = driver.find_elements_by_class_name('answer_permalink')
     print 'size' + str(len(elements))
