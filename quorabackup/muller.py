@@ -9,7 +9,7 @@ driver = webdriver.PhantomJS()
   
  
  
-driver.get("https://www.quora.com/How-would-demonetizing-500-and-1000-rupee-notes-and-introducing-new-2000-rupee-notes-help-curb-black-money-and-corruption/answer/Deepak-Mehta-2")
+driver.get("https://www.quora.com/What-would-be-some-of-the-most-distinguished-families-in-the-world/answer/Deepak-Mehta-2")
 
 ele=driver.find_elements_by_class_name('qtext_para')
 ans="<html><body>"
