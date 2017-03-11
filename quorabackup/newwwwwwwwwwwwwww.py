@@ -11,11 +11,11 @@ from selenium import webdriver
 driver = webdriver.PhantomJS()
 driver3 = webdriver.PhantomJS()
 print 'started browser'
-driver.get("https://www.quora.com/profile/Deepak-Mehta-2")
+driver.get("https://www.quora.com/profile/Balaji-Viswanathan-2")
 print 'got to url'
 driver.save_screenshot('out4.png');
 while True:
-    time.sleep(100)
+    time.sleep(300)
     driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
     elements = driver.find_elements_by_class_name('answer_permalink')
     print 'size' + str(len(elements))
@@ -26,7 +26,7 @@ while True:
         if len(str(each.get_attribute('href'))) > 6:
             
             driver3.get(str(each.get_attribute('href')))
-            if float(driver3.find_element_by_class_name('meta_num').text[:len(driver3.find_element_by_class_name('meta_num').text) - 1]) > 100.0:
+            if float(driver3.find_element_by_class_name('meta_num').text[:len(driver3.find_element_by_class_name('meta_num').text) - 1]) > 200.0:
                print str(each.get_attribute('href'))
                yourstring=str(each.get_attribute('href'))
                yourstring = yourstring.encode('ascii', 'ignore').decode('ascii')
