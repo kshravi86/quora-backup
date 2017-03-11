@@ -9,8 +9,7 @@ driver = webdriver.PhantomJS()
   
  
  
-driver.get("https://www.quora.com/What-would-be-some-of-the-most-distinguished-families-in-the-world/answer/Deepak-Mehta-2")
-
+driver.get("https://www.quora.com/Why-did-Apple-remove-the-escape-key-from-the-new-Macbook/answer/Deepak-Mehta-2")
 ele=driver.find_elements_by_class_name('qtext_para')
 ans="<html><body>"
 for each in ele:
