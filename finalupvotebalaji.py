@@ -37,7 +37,7 @@ while True:
                 for each in eles:
 
 
-                 if int(str(each.text)[:len(str(each.text))-9]) > 1000:
+                 if int(str(each.text)[:len(str(each.text))-9]) > 6000:
                        print "url  "+driver3.current_url
                        print str(each.text)
 
