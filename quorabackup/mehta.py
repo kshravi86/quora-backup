@@ -6,7 +6,7 @@ from selenium import webdriver
 driver = webdriver.PhantomJS()
 driver3= webdriver.PhantomJS()
 print 'started browser'
-driver.get("https://www.quora.com/profile/Deepak-Mehta-2")
+driver.get("https://www.quora.com/profile/Balaji-Viswanathan-2")
 print 'got to url'
 driver.save_screenshot('out3.png');
 while True:
@@ -22,7 +22,7 @@ while True:
          print str(each.get_attribute('href'))
          print driver3.find_element_by_class_name('meta_num').text[:len(driver3.find_element_by_class_name('meta_num').text)-1]
       
-    time.sleep(100)
+    time.sleep(500)
 
  f = open('myfile','w')
 f.write('hi there\n')
