@@ -45,7 +45,7 @@ while True:
 
 
                  if int(str(each.text)[:len(str(each.text))-9]) > 6000:
-                       print "w.append("+driver3.current_url+")"
+                       print "w.append('"+driver3.current_url+"')"
                        #print str(each.text)
 
 
